@@ -15,12 +15,10 @@
 ## 🚀 Key Features
 
 - 🐟 **Species Detection & Classification** using image-based ML models
-- 🌊 **Water Quality Monitoring** via IoT sensor integrations
 - 📱 **Mobile Dashboard** for real-time fish data tracking
 - 📊 **Data Visualization & Analytics** for catch patterns and trends
-- 📡 **Satellite + Weather API Integration** for informed navigation
-- 🧭 **Smart Route Suggestions** (Non-harmful, avoiding overfishing zones)
 - 🔗 **Offline-First Progressive Web App** for rural accessibility
+
 
 ---
 
