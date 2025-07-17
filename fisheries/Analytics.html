@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fisheries Innovation Analytics</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Back Button -->
+<a href="javascript:history.back()" style="
+  display: inline-block;
+  background: linear-gradient(135deg, #FF4136, #FF851B);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+">
+  ⬅ Back
+</a>
+
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      padding: 50px 20px 30px 20px;
+      color: white;
+    }
+
+    .header h1 {
+      font-weight: 600;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .card-header {
+      background: linear-gradient(45deg, #ffecd2, #fcb69f);
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .list-group-item {
+      background-color: rgba(255,255,255,0.5);
+      border: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* Chart Animation */
+    canvas {
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🌊 Fisheries Innovation Analytics</h1>
+    <p>Visualising Key Trends for Sustainable Growth</p>
+  </div>
+
+  <div class="container py-4">
+
+    <!-- Overview -->
+    <div class="glass-card mb-4 p-4">
+      <div class="card-header">📑 Overview</div>
+      <div class="card-body">
+        <p>This interactive dashboard highlights technologies and innovations in fisheries, supporting data-driven decisions for sustainable aquaculture development.</p>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="glass-card p-3">
+          <div class="card-header">🛠️ Technology Distribution</div>
+          <div class="card-body">
+            <canvas id="techChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="glass-card p-3">
+          <div class="card-header">📈 Innovation Impact Analysis</div>
+          <div class="card-body">
+            <canvas id="impactChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insights -->
+    <div class="glass-card p-4">
+      <div class="card-header">💡 Key Insights</div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">✅ Rapid adoption of IoT-based fish tracking technologies.</li>
+          <li class="list-group-item">✅ Feed optimisation remains a central focus area.</li>
+          <li class="list-group-item">✅ High potential for AI-based yield prediction integration.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Fisheries Innovation Lab | Designed with ❤️ for Sustainable Growth</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Chart 1: Technology Distribution
+    const ctx1 = document.getElementById('techChart').getContext('2d');
+    const techChart = new Chart(ctx1, {
+      type: 'polarArea',
+      data: {
+        labels: ['IoT', 'AI/ML', 'Blockchain', 'Automation', 'Others'],
+        datasets: [{
+          label: 'Technology Share',
+          data: [30, 20, 10, 25, 15],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Chart 2: Innovation Impact
+    const ctx2 = document.getElementById('impactChart').getContext('2d');
+    const impactChart = new Chart(ctx2, {
+      type: 'radar',
+      data: {
+        labels: ['Production', 'Sustainability', 'Profitability', 'Employment'],
+        datasets: [{
+          label: 'Impact Score',
+          data: [80, 70, 60, 75],
+          backgroundColor: 'rgba(255, 159, 64, 0.5)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            suggestedMin: 0,
+            suggestedMax: 100
+          }
+        },
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      rootId: "JotformAgent-0198181e63427a20bd3bb7d649f7e66c9b2f",
+      formID: "0198181e63427a20bd3bb7d649f7e66c9b2f",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https:\/\/www.jotform.com",
+      isInitialOpen: false,
+      isDraggable: false,
+      background: "linear-gradient(180deg, #2c8ae4 0%, #717dd7 100%)",
+      buttonBackgroundColor: "#0066C3",
+      buttonIconColor: "#FFFFFF",
+      variant: false,
+      customizations: {
+        greeting: "Yes",
+        greetingMessage: "Hi! How can I assist you?",
+        pulse: "Yes",
+        position: "right"
+      }
+    });
+  });
+</script>
+</body>
+</html>
