@@ -35,7 +35,50 @@
 
 ---
 
+
+
+
+
+#To Acess The project
+
+# 🚀 Project Setup Guide
+
+Welcome to the project! Follow the steps below to get started quickly.
+
+---
+
+## 🔧 How to Access the Project
+
+### 🌀 Clone the Repository
+
+bash
+git clone
+🔁 Replace the URL above with your actual GitHub repository link.
+
+💻 Open the Project in VS Code
+bash
+Copy
+Edit
+cd your-repo-name
+code .
+🌐 Open the Web Page
+Option 1: Using Live Server (Recommended)
+Locate the index.html file (usually in the root or /frontend folder).
+
+Right-click on index.html.
+
+Select "Open with Live Server".
+
+🧩 Make sure the Live Server extension is installed in your VS Code.
+
+Option 2: Without Live Server
+Double-click on index.html to open it in your default browser.
+
+✅ That’s it!
+You can now access and use the full web application directly from your browser.
+
 ## 📷 Fish Species Image Analyzer
 
 ```prompt
-Upload a fish image → AI detects → Classifies the species → Displays relevant data
+Upload a fish image → AI detects → Classifies the species → Displays relevant data'
+
