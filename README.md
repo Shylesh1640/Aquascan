@@ -80,6 +80,8 @@ You can now access and use the full web application directly from your browser.
 ## 📷 Fish Species Image Analyzer
 
 ###We have Deployed our project in replit:https://replit.com/@shylesh1640/Aquascan
+"Step 1: click on the link above "
+"Step 2: click on the fisheries 
 
 ```prompt
 Upload a fish image → AI detects → Classifies the species → Displays relevant data'
